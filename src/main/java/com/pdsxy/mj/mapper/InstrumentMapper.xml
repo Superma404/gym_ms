@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pdsxy.mj.dao.InstrumentMapper">
+  <resultMap id="BaseResultMap" type="com.pdsxy.mj.bean.Instrument">
+    <id column="ins_id" jdbcType="INTEGER" property="insId" />
+    <result column="ins_name" jdbcType="VARCHAR" property="insName" />
+    <result column="ins_use" jdbcType="VARCHAR" property="insUse" />
+    <result column="ins_status" jdbcType="INTEGER" property="insStatus" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    ins_id, ins_name, ins_use, ins_status
+  </sql>
+  <select id="selectByExample" parameterType="com.pdsxy.mj.bean.InstrumentExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from instrument
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from instrument
+    where ins_id = #{insId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from instrument
+    where ins_id = #{insId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.pdsxy.mj.bean.InstrumentExample">
+    delete from instrument
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.pdsxy.mj.bean.Instrument">
+    insert into instrument (ins_id, ins_name, ins_use, 
+      ins_status)
+    values (#{insId,jdbcType=INTEGER}, #{insName,jdbcType=VARCHAR}, #{insUse,jdbcType=VARCHAR}, 
+      #{insStatus,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.pdsxy.mj.bean.Instrument">
+    insert into instrument
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="insId != null">
+        ins_id,
+      </if>
+      <if test="insName != null">
+        ins_name,
+      </if>
+      <if test="insUse != null">
+        ins_use,
+      </if>
+      <if test="insStatus != null">
+        ins_status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="insId != null">
+        #{insId,jdbcType=INTEGER},
+      </if>
+      <if test="insName != null">
+        #{insName,jdbcType=VARCHAR},
+      </if>
+      <if test="insUse != null">
+        #{insUse,jdbcType=VARCHAR},
+      </if>
+      <if test="insStatus != null">
+        #{insStatus,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.pdsxy.mj.bean.InstrumentExample" resultType="java.lang.Long">
+    select count(*) from instrument
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update instrument
+    <set>
+      <if test="record.insId != null">
+        ins_id = #{record.insId,jdbcType=INTEGER},
+      </if>
+      <if test="record.insName != null">
+        ins_name = #{record.insName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.insUse != null">
+        ins_use = #{record.insUse,jdbcType=VARCHAR},
+      </if>
+      <if test="record.insStatus != null">
+        ins_status = #{record.insStatus,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update instrument
+    set ins_id = #{record.insId,jdbcType=INTEGER},
+      ins_name = #{record.insName,jdbcType=VARCHAR},
+      ins_use = #{record.insUse,jdbcType=VARCHAR},
+      ins_status = #{record.insStatus,jdbcType=INTEGER}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pdsxy.mj.bean.Instrument">
+    update instrument
+    <set>
+      <if test="insName != null">
+        ins_name = #{insName,jdbcType=VARCHAR},
+      </if>
+      <if test="insUse != null">
+        ins_use = #{insUse,jdbcType=VARCHAR},
+      </if>
+      <if test="insStatus != null">
+        ins_status = #{insStatus,jdbcType=INTEGER},
+      </if>
+    </set>
+    where ins_id = #{insId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pdsxy.mj.bean.Instrument">
+    update instrument
+    set ins_name = #{insName,jdbcType=VARCHAR},
+      ins_use = #{insUse,jdbcType=VARCHAR},
+      ins_status = #{insStatus,jdbcType=INTEGER}
+    where ins_id = #{insId,jdbcType=INTEGER}
+  </update>
+</mapper>

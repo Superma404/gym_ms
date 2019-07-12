@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pdsxy.mj.dao.UserMapper">
+  <resultMap id="BaseResultMap" type="com.pdsxy.mj.bean.User">
+    <id column="us_id" jdbcType="INTEGER" property="usId" />
+    <result column="us_name" jdbcType="VARCHAR" property="usName" />
+    <result column="us_password" jdbcType="VARCHAR" property="usPassword" />
+    <result column="us_realname" jdbcType="VARCHAR" property="usRealname" />
+    <result column="us_tel" jdbcType="VARCHAR" property="usTel" />
+    <result column="us_eml" jdbcType="VARCHAR" property="usEml" />
+    <result column="us_status" jdbcType="INTEGER" property="usStatus" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    us_id, us_name, us_password, us_realname, us_tel, us_eml, us_status
+  </sql>
+  <select id="selectByExample" parameterType="com.pdsxy.mj.bean.UserExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from user
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from user
+    where us_id = #{usId,jdbcType=INTEGER}
+  </select>
+  <select id="selectByName" parameterType="com.pdsxy.mj.bean.UserExample" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from user
+    where us_name = #{usName,jdbcType=VARCHAR}
+  </select>
+  <select id="selectByUstel"  resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from user
+    where us_tel = #{usTel,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from user
+    where us_id = #{usId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.pdsxy.mj.bean.UserExample">
+    delete from user
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <delete id="deleteByMoreusId" parameterType="com.pdsxy.mj.bean.UserExample">
+    delete from user
+    where us_id in
+    <foreach collection="array" item="id" open="(" close=")" separator=",">
+      #{id}
+    </foreach>
+  </delete>
+  <insert id="insert" parameterType="com.pdsxy.mj.bean.User">
+    insert into user (us_id, us_name, us_password, 
+      us_realname, us_tel, us_eml, 
+      us_status)
+    values (#{usId,jdbcType=INTEGER}, #{usName,jdbcType=VARCHAR}, #{usPassword,jdbcType=VARCHAR}, 
+      #{usRealname,jdbcType=VARCHAR}, #{usTel,jdbcType=VARCHAR}, #{usEml,jdbcType=VARCHAR}, 
+      #{usStatus,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.pdsxy.mj.bean.User">
+    insert into user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="usId != null">
+        us_id,
+      </if>
+      <if test="usName != null">
+        us_name,
+      </if>
+      <if test="usPassword != null">
+        us_password,
+      </if>
+      <if test="usRealname != null">
+        us_realname,
+      </if>
+      <if test="usTel != null">
+        us_tel,
+      </if>
+      <if test="usEml != null">
+        us_eml,
+      </if>
+      <if test="usStatus != null">
+        us_status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="usId != null">
+        #{usId,jdbcType=INTEGER},
+      </if>
+      <if test="usName != null">
+        #{usName,jdbcType=VARCHAR},
+      </if>
+      <if test="usPassword != null">
+        #{usPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="usRealname != null">
+        #{usRealname,jdbcType=VARCHAR},
+      </if>
+      <if test="usTel != null">
+        #{usTel,jdbcType=VARCHAR},
+      </if>
+      <if test="usEml != null">
+        #{usEml,jdbcType=VARCHAR},
+      </if>
+      <if test="usStatus != null">
+        #{usStatus,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.pdsxy.mj.bean.UserExample" resultType="java.lang.Long">
+    select count(*) from user
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update user
+    <set>
+      <if test="record.usId != null">
+        us_id = #{record.usId,jdbcType=INTEGER},
+      </if>
+      <if test="record.usName != null">
+        us_name = #{record.usName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.usPassword != null">
+        us_password = #{record.usPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="record.usRealname != null">
+        us_realname = #{record.usRealname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.usTel != null">
+        us_tel = #{record.usTel,jdbcType=VARCHAR},
+      </if>
+      <if test="record.usEml != null">
+        us_eml = #{record.usEml,jdbcType=VARCHAR},
+      </if>
+      <if test="record.usStatus != null">
+        us_status = #{record.usStatus,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update user
+    set us_id = #{record.usId,jdbcType=INTEGER},
+      us_name = #{record.usName,jdbcType=VARCHAR},
+      us_password = #{record.usPassword,jdbcType=VARCHAR},
+      us_realname = #{record.usRealname,jdbcType=VARCHAR},
+      us_tel = #{record.usTel,jdbcType=VARCHAR},
+      us_eml = #{record.usEml,jdbcType=VARCHAR},
+      us_status = #{record.usStatus,jdbcType=INTEGER}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pdsxy.mj.bean.User">
+    update user
+    <set>
+      <if test="usName != null">
+        us_name = #{usName,jdbcType=VARCHAR},
+      </if>
+      <if test="usPassword != null">
+        us_password = #{usPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="usRealname != null">
+        us_realname = #{usRealname,jdbcType=VARCHAR},
+      </if>
+      <if test="usTel != null">
+        us_tel = #{usTel,jdbcType=VARCHAR},
+      </if>
+      <if test="usEml != null">
+        us_eml = #{usEml,jdbcType=VARCHAR},
+      </if>
+      <if test="usStatus != null">
+        us_status = #{usStatus,jdbcType=INTEGER},
+      </if>
+    </set>
+    where us_id = #{usId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pdsxy.mj.bean.User">
+    update user
+    set us_name = #{usName,jdbcType=VARCHAR},
+      us_password = #{usPassword,jdbcType=VARCHAR},
+      us_realname = #{usRealname,jdbcType=VARCHAR},
+      us_tel = #{usTel,jdbcType=VARCHAR},
+      us_eml = #{usEml,jdbcType=VARCHAR},
+      us_status = #{usStatus,jdbcType=INTEGER}
+    where us_id = #{usId,jdbcType=INTEGER}
+  </update>
+</mapper>

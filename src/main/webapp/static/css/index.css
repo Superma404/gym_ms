@@ -1,0 +1,189 @@
+/*banner开始*/
+.banner{background:url("../images/1525661991.png") no-repeat center;width:100%;height:360px;}
+
+ .swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+
+/*banner结束*/
+/*内容开始*/
+.content{width:1000px;margin:0 auto;color:#555555;height:100%;}
+/*图标开始*/
+.index-tbb{font-size:18px;margin-top:20px;overflow:auto;zoom:1;}
+.index-tbb a{color:#555555;width:111px;display:block;float:left;margin-right:18%}
+.index-tbb .index-tbbclear{margin-right:0}
+.index-tbb .index-tbbtxt{text-align:center}
+/*图标结束*/
+/*每日精选开始*/
+.index-mrjxtit{font-size:24px;font-family:"宋体";margin-top: 50px;height:20px;}
+.index-mrjx{overflow: hidden;height:550px;width:100%;margin-top:15px;position: relative}
+.index-mrjx_left{width:74px;height:243px;background:#00CCCD;font-size:30px;font-family:"宋体";color:#ffffff;text-align: center;padding:10px 0;position:absolute;}
+.index-mrjx_left p{position: absolute;width:74px;height:38px;bottom:10px;right:10px;background:url("../images/index、_38.jpg") no-repeat right;}
+.index-mrjx_left p a{width:50px;font-size:15px;font-family:"宋体";color:#fff;}
+
+.index-mrjx_min{position: absolute;left:90px;top: 0;}
+.index-mrjx_right{position: absolute;right:0;}
+.index-pruduct{}
+.index-pruduct li{float:left;margin-left:16px;}
+.index-pruduct li .index-plidiv1{position:relative}
+.index-pruduct li .index-plidiv1 .index-p_dkz{position:absolute;z-index:5;bottom:0;left: 0;font-size:12px;padding:3px 6px;background:#00CCCD; color:#fff}
+.index-pruduct li p{font-size:12px;text-align:center;margin: 10px;}
+.index-pruduct li p a{color:#5D5D5D}
+.index-pruduct li .index-pli-bot{border-top:3px solid #00CCCD;margin-top: 28px;}
+.index-pruduct .index-pli-bot dl{font-size:12px;width:70px;float:left;text-align: center;margin-top:10px;}
+.index-pruduct .index-pli-bot dl dt{color:#00CCCD }
+.index-pruduct .index-pli-bot dl dd{color:#5D5D5D;margin-top:5px; }
+.index-mrjx_botto{position: absolute;bottom: 0;width: 1050px;right:-35px;}
+/*每日精选结束*/
+.ggt2{margin:20px 0}
+
+/*每日精选2开始*/
+.index-mrjx2{height:570px;}
+/*每日精选2结束*/
+/*内容结束*/
+
+.index-jjks{height:300px;}
+.index-jjkstit{font-size:24px;font-family:"宋体";margin-top: 50px;height:30px;}
+.index-jjkscon{font-size:12px;width:1000px}
+.index-jjkscon ul{width:1050px;}
+.index-jjkscon li{width:238px;text-align:center;float:left;margin-right:16px;}
+.index-jjkscon li span{color: #d70d51;}
+.index-jjkscon li div{margin-top:10px;}
+.index-jjkscon1{position: relative}
+.index-jjkscon1 .index-j_dkz{position: absolute;z-index:5;bottom:0;left: 0;font-size:12px;padding:3px 6px;background:#F9BB24; color:#fff}
+.index-jjkscon li i{font-style: normal;float:left;}
+.index-jjkscon li b{font-style: normal;float:right;font-weight:100}
+
+  .index-jjkstit2{position: relative;}
+.index-jjkstit2 span{position: absolute;right:100px;}
+.index-dxmggcon{position: relative;height: 260px;}
+.index-dxmggcon1{position:absolute;font-family: "微软雅黑";margin-top:10px}
+.index-dxmggcon1 li{height:50px;width: 348px;background:#CCCCCC;margin-top:1px;vertical-align:middle;position: relative;line-height:50px;cursor: pointer}
+.index-dxmggcon1 li b{font-size:40px;position: absolute;left:10px; top:0px;font-weight:100;color: #A0A0A0}
+.index-dxmggcon1 li span{position: absolute;left:50px;color:#000}
+.index-dxmggcon1 li i{font-style: normal}
+.index-dxmggcon1 .index_tab{position:absolute;right:-360px;top:1px;width:360px;height:253px;border:1px solid #DDDDDD;border-left:none}
+
+ .index-dxmggcon1 li s{position: absolute;right:0;top:0;background:url("../images/index-yfh_17.png") no-repeat;width:53px;height: 50px;}
+
+.index-dxmggcon1 ul .cur{background:#FE890D;color:#fff;}
+.index-dxmggcon1 ul .cur a{ position: absolute;right:-6px;top:20px;
+    width: 0;
+    height: 0;
+    border-top:6px solid transparent;
+    border-left: 6px solid #FE890D;
+    border-bottom:6px solid transparent;}
+
+.index-dxmggcon1 .cur b{color:#fff}
+.index-dxmggcon1 .cur span{color:#fff}
+
+.index-dxmggcon1 .index_tab dl{display:none;padding:20px 30px;}
+.index-dxmggcon1  .index_tab .index_tab1 {display:block}
+.index-dxmggcon1 .index_tab .index_tab1_1{font-weight:800}
+.index-dxmggcon1 .index_tab .index_tab1_2{font-size:12px;margin:10px 0;}
+.index-dxmggcon1 .index_tab .index_tab1_3{font-size:30px;font-family:"微软雅黑";color: #FF7534;}
+.index-dxmggcon1 .index_tab .index_tab1_4{margin:10px 0;}
+.index-dxmggcon1 .index_tab .index_tab1_5{font-size:12px;color:#666}
+.index-dxmggcon1 .index_tab .index_tab1_5 a{font-size:12px;color:#666;vertical-align: middle}
+.index-dxmggcon1 .index_tab .index_tab1_5 i{margin:0 5px}
+.index-dxmggcon1 .index_tab .index_tab1_5 span{color: #00CCCE;margin:0 5px;}
+.index-dxmggcon1 .index_tab .index_tab1_6{margin:10px;}
+
+.loading-container {
+    width:250px;
+    height:15px;
+    padding:50px;
+
+}
+
+.loading-container .loading-bar {
+    margin-bottom:40px;
+}
+.loading-bar {
+    background:#E5E5E5;
+    width:250px;
+    height:15px;
+
+}
+
+.amount {
+    /* we haven't included the colour yet, we'll get to that later. */
+    height:15px;
+    white-space:nowrap;
+    overflow:hidden;
+}
+
+.lines {
+    /* the lines overflow the container. This creates a continuous flow of the background */
+    width:400px;
+    /* We use a SVG file as the background */
+    background:url('../images/lines.svg') repeat-x;
+    background-size:10%;
+    height:120%;
+    text-align:center;
+    margin-top:-17px;
+    /* Any overflow is hidden */
+    overflow:hidden;
+    /* Implement the animations, we'll get to that later */
+    -webkit-animation:moveBars 3s linear infinite;
+    -moz-animation:moveBars 3s linear infinite;
+    -ms-animation:moveBars 3s linear infinite;
+    -o-animation:moveBars 3s linear infinite;
+    animation:moveBars 3s linear infinite;
+    font-weight:bold;
+    color:#fff;
+    font-size:18px;
+}
+
+.loaded {
+    text-align:center;
+    font-family:Helvetica, sans-serif;
+    font-weight:bold;
+    position:relative;
+    top:0px;
+    font-size:15px;
+    text-shadow:0px 0px 10px rgba(0,0,0,0.2);
+    color:#fff;
+    z-index:9999;
+}
+
+.loading-bar span{position: absolute;font-weight:100;color:#000;right:40px;top:125px;}
+
+.blue {
+    background-color:#20b9c3;
+
+}
+/* ANIMATIONS */
+@keyframes moveBars { 100% { margin-left:-180px;} }
+@-webkit-keyframes moveBars { 100% { margin-left:-180px;} }
+@-moz-keyframes moveBars { 100% { margin-left:-180px;} }
+@-ms-keyframes moveBars { 100% { margin-left:-180px;} }
+@-o-keyframes moveBars { 100% { margin-left:-180px;} }
+
+.index-xxzx{position:absolute;right:0px; top:0px;width:280px;height:253px;border:1px solid #DDDDDD;margin-top:10px;}
+.index-xxzx ul{margin-top:10px;}
+.index-xxzx li{height:30px;}
+.index-xxzx li span{background: url("../images/index-tbpu_03.jpg") no-repeat;display:inline-block;width: 12px;height: 12px;margin: 0 10px;}
+.index-xxzx li a{font-size:14px;color:#3C3C48;padding:10px 0}
+.index-xxzx li a:hover{color:#0697DA}

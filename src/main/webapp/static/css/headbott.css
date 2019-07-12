@@ -1,0 +1,67 @@
+/*头部样式开始*/
+#header{height: 87px;width: 100%;background:#76B774;}
+.heade-con{width:1000px;margin: 0 auto;height:100%;position:relative;}
+.logo{position: absolute;left: 2px;top:24px;}
+.nav{position: absolute;left:200px;}
+.nav li{float:left;line-height:87px}
+.nav li a{font-size: 16px;color:#fff;padding:20px 0; margin:0 12px; }
+.nav li a:hover{color:#9a939b;border-bottom:2px #00cccd solid}
+.nav li .vcolor{color:#9a939b;border-bottom:2px #00cccd solid }
+.search{position: absolute;right:130px; height:35px;background:#ffffff; width: 141px;border-radius:5px;top:30px;}
+
+.search .search-txt{
+    width: 105px;border-radius:5px;
+    height:33px;
+    border:none;outline:none;
+    color: #a9a9a9;vertical-align: middle;
+text-indent: 3px;line-height: 33px;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;}
+.search .search-but{ position: absolute;
+    right: 2px;border:none;outline:none;
+    bottom: 0px;
+    width: 33px; cursor: pointer;
+    height:35px;
+    background:url("../images/search_06.jpg") no-repeat;
+}
+.index-login{position: absolute;right:0px;top:36px;}
+.index-login a{font-size:15px; color:#ffffff;padding:3px 9px;border-radius: 5px;}
+.index-login a:hover{background:#55ACEF}
+.index-login .index-login1{background:#55ACEF}
+/*头部样式结束*/
+/*底部样式开始*/
+#bottom{width:1000px;margin:0 auto;position:relative;height:460px;font-size:12px;}
+.bot-con1{color:#ABABAB;margin-top:20px;height:50px;}
+.bot-con1 li{float:left;margin-right:10px;vertical-align:middle;height:50px;line-height:50px;font-size:16px;}
+.bot-con1 li span{margin:0 5px;height:50px;display: inline-block;vertical-align:middle;}
+.bot-con1 li .inde-span1{background:url("../images/bottbom_33.jpg") no-repeat;width:112px;}
+
+.bot-con1 li .inde-span2{background:url("../images/bottbom_36.jpg") no-repeat;width:141px;}
+.bot-con1 .bot-con1-li1{font-size:22px;margin-right:20px;}
+
+.bot-con1 li .inde-span3{background:url("../images/bottbom_38.jpg") no-repeat;width:147px;}
+
+.bot-con1 li .inde-span4{background:url("../images/bottbom_49.jpg") no-repeat 0px;width:26px;}
+.bot-con1 li .inde-span5{background:url("../images/bottbom_52.jpg") no-repeat 0px;width:26px;}
+.bot-con1 li .inde-span6{background:url("../images/bottbom_54.jpg") no-repeat 0px;width:26px;}
+.bot-con1 li .inde-span7{background:url("../images/bottomm1_56.jpg") no-repeat 0px;width:26px;}
+.bot-con2{margin-top:30px;}
+.bot-con2 li{float:left;margin-right:30px;}
+.bottom-ggt{height:135px;}
+.zc-yqlink{margin-top:20px;}
+.zc-yqlink li{float:left}
+.zc-yqlink ul{border-bottom:1px solid #E8E8E8;border-top:1px solid #E8E8E8;overflow:auto;
+    zoom: 1;}
+.zc-yqlink li a{color:#ABABAB;padding:10px 10px 10px 0px;display: block}
+.footer-bd a {font-size:12px;
+    float: left;
+    margin: 0 4px;
+    white-space: nowrap;
+    color:#ABABAB;;
+}
+.footer-bd{margin-top:10px;color:#ABABAB;}
+/*底部样式结束*/
+
+
+

@@ -1,0 +1,29 @@
+.ly-list_con{width:1000px;margin:15px auto;zoom:1;overflow:auto}
+.ly-list_conl{float:left;width:203px;border:1px solid #E1E1E1;overflow:auto;
+    zoom: 1;border-bottom:none}
+.ly-list_conltit{padding:20px 10px;font-size:14px;font-weight:800; }
+.ly-list_conltit i{background:url("../images/lylistvido_03.jpg") no-repeat bottom;width: 36px;height:16px;display:inline-block}
+.ly-list_conlcon a{font-size:12px;display:block;padding:15px 0 ;text-align:center;border-bottom:1px solid #E1E1E1}
+.ly-list_conlcon a:hover{background:#DC5031;color:#fff}
+.ly-list_conlcon .conlcon_bg{background:#DC5031;color:#fff}
+.ly-list_conf{float:right;width:780px;position: relative;height:570px;}
+
+.ly-l_csp{position: absolute;left:0px;top:0px;border:1px #dddddd solid;}
+.ly-l_clistt{width: 220px;position: absolute;right:0px;top:0px;}
+.ly-l_clistttit{border-top:2px #313a41 solid; color:#313a41;padding:10px 5px;font-size:14px;font-weight: 800;
+    color: #000;}
+.ly-l_clisttmin{width:210px;font-size:12px;line-height:26px;color:#313A41}
+.ly-l_clisttmin a{text-align:center;background:#DC4F34;padding:5px 18px;line-height:30px;font-size:16px;color:#fff;margin:15px 40px;}
+.ly-list_conbot{height: 190px;width:100%;position: absolute;bottom:0px;}
+.ly-list_cbttit{font-weight:800;height:30px;}
+.ly-list_conbot h1{}
+.ly-list_conbot h2{}
+.ly-list_ch1{display:block;height:5px;width:100%;background:#DFDFDF;position:relative}
+.ly-list_ch2{display:block;height:5px;width:30%;background:#FF0000;position:absolute;top:0;}
+.ly-list_cbtmin{margin-top:10px;}
+.ly-list_cbtmin li{position:relative;width:227px;float:left;margin-left:15px;}
+.ly-list_cbtmin li i{position: absolute;top:-5px;left:-5px;background:url("../images/produsss_03.png") no-repeat;width:73px;height:76px;}
+.ly-list_cbtmin li b{position: absolute;right:10px; top:10px;font-weight:100;background:url("../images/produsss_09.png")no-repeat 10px #fff;width:49px;height:18px;border-radius:10px;text-align: right;padding:1px 3px;
+    font-size:10px;color: #ABABAB}
+.ly-list_cbtmin li p{padding:5px 0;}
+.ly-list_cbtmin li p a{font-size:12px;text-align: center;padding:5px 0;color: #313a41}

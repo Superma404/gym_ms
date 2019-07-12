@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!--执行generator插件生成文件的命令： call mvn mybatis-generator:generate -e -->
+    <!-- 引入配置文件 -->
+    <!-- <properties resource="mybatis-generator/mybatisGeneratorinit.properties"/> -->
+    <!--classPathEntry:数据库的JDBC驱动,换成你自己的驱动位置 可选 -->
+    <!--<classPathEntry location="D:\generator_mybatis\mysql-connector-java-5.1.24-bin.jar" /> -->
+
+    <!-- 一个数据库一个context -->
+    <!--defaultModelType="flat" 大数据字段，不分表 -->
+    <context id="context1">
+        <!-- 自动识别数据库关键字，默认false，如果设置为true，根据SqlReservedWords中定义的关键字列表；
+        一般保留默认值，遇到数据库关键字（Java关键字），使用columnOverride覆盖 -->
+        <property name="autoDelimitKeywords" value="true"/>
+        <!-- 生成的Java文件的编码 -->
+        <property name="javaFileEncoding" value="utf-8"/>
+        <!-- beginningDelimiter和endingDelimiter：指明数据库的用于标记数据库对象名的符号，比如ORACLE就是双引号，MYSQL默认是`反引号； -->
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+
+        <!-- 格式化java代码 -->
+        <property name="javaFormatter" value="org.mybatis.generator.api.dom.DefaultJavaFormatter"/>
+        <!-- 格式化XML代码 -->
+        <property name="xmlFormatter" value="org.mybatis.generator.api.dom.DefaultXmlFormatter"/>
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
+
+
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/><!-- 是否取消注释 -->
+            <property name="suppressDate" value="true"/> <!-- 是否生成注释代时间戳-->
+        </commentGenerator>
+
+        <!-- jdbc连接 -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/gym"
+                        userId="root" password="root">
+        </jdbcConnection>
+        <!-- 类型转换 -->
+        <javaTypeResolver>
+            <!-- 是否使用bigDecimal， false可自动转化以下类型（Long, Integer, Short, etc.） -->
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+        <!-- 生成的实体包路径，包含实体类和Example类（用来定制sql的） -->
+        <javaModelGenerator targetPackage="com.pdsxy.mj.bean"
+                            targetProject="./src/main/java"/>
+        <!-- 生成的Mapper.xml路径 -->
+        <sqlMapGenerator targetPackage="com.pdsxy.mj.mapper"
+                         targetProject="./src/main/java"/>
+        <!-- 生成的mapper类 -->
+        <javaClientGenerator targetPackage="com.pdsxy.mj.dao"
+                             targetProject="./src/main/java" type="XMLMAPPER"/>
+
+        <!-- table可以有多个,每个数据库中的表都可以写一个table，tableName表示要匹配的数据库表,-->
+        <!-- 也可以在tableName属性中通过使用%通配符来匹配所有数据库表,只有匹配的表才会自动生成文件 -->
+        <table schema="" tableName="admin" domainObjectName="Admin"></table>
+        <table schema="" tableName="user" domainObjectName="User"></table>
+        <table schema="" tableName="coach" domainObjectName="Coach"></table>
+        <table schema="" tableName="course" domainObjectName="Course"></table>
+        <table schema="" tableName="instrument" domainObjectName="Instrument"></table>
+        <table schema="" tableName="message" domainObjectName="Message"></table>
+        <table schema="" tableName="notice" domainObjectName="Notice"></table>
+        <table schema="" tableName="type" domainObjectName="Type"></table>
+
+    </context>
+</generatorConfiguration>

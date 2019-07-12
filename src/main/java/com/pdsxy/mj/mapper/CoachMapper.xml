@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pdsxy.mj.dao.CoachMapper">
+  <resultMap id="BaseResultMap" type="com.pdsxy.mj.bean.Coach">
+    <id column="co_id" jdbcType="INTEGER" property="coId" />
+    <result column="co_name" jdbcType="VARCHAR" property="coName" />
+    <result column="co_course" jdbcType="VARCHAR" property="coCourse" />
+    <result column="co_status" jdbcType="INTEGER" property="coStatus" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    co_id, co_name, co_course, co_status
+  </sql>
+  <select id="selectByExample" parameterType="com.pdsxy.mj.bean.CoachExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from coach
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from coach
+    where co_id = #{coId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from coach
+    where co_id = #{coId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.pdsxy.mj.bean.CoachExample">
+    delete from coach
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <delete id="deleteByMorecoId" parameterType="com.pdsxy.mj.bean.CoachExample">
+    delete from coach
+    where co_id in
+    <foreach collection="array" item="id" open="(" close=")" separator=",">
+      #{id}
+    </foreach>
+ </delete>
+  <insert id="insert" parameterType="com.pdsxy.mj.bean.Coach">
+    insert into coach (co_id, co_name, co_course, 
+      co_status)
+    values (#{coId,jdbcType=INTEGER}, #{coName,jdbcType=VARCHAR}, #{coCourse,jdbcType=VARCHAR}, 
+      #{coStatus,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.pdsxy.mj.bean.Coach">
+    insert into coach
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="coId != null">
+        co_id,
+      </if>
+      <if test="coName != null">
+        co_name,
+      </if>
+      <if test="coCourse != null">
+        co_course,
+      </if>
+      <if test="coStatus != null">
+        co_status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="coId != null">
+        #{coId,jdbcType=INTEGER},
+      </if>
+      <if test="coName != null">
+        #{coName,jdbcType=VARCHAR},
+      </if>
+      <if test="coCourse != null">
+        #{coCourse,jdbcType=VARCHAR},
+      </if>
+      <if test="coStatus != null">
+        #{coStatus,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.pdsxy.mj.bean.CoachExample" resultType="java.lang.Long">
+    select count(*) from coach
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update coach
+    <set>
+      <if test="record.coId != null">
+        co_id = #{record.coId,jdbcType=INTEGER},
+      </if>
+      <if test="record.coName != null">
+        co_name = #{record.coName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.coCourse != null">
+        co_course = #{record.coCourse,jdbcType=VARCHAR},
+      </if>
+      <if test="record.coStatus != null">
+        co_status = #{record.coStatus,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update coach
+    set co_id = #{record.coId,jdbcType=INTEGER},
+      co_name = #{record.coName,jdbcType=VARCHAR},
+      co_course = #{record.coCourse,jdbcType=VARCHAR},
+      co_status = #{record.coStatus,jdbcType=INTEGER}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pdsxy.mj.bean.Coach">
+    update coach
+    <set>
+      <if test="coName != null">
+        co_name = #{coName,jdbcType=VARCHAR},
+      </if>
+      <if test="coCourse != null">
+        co_course = #{coCourse,jdbcType=VARCHAR},
+      </if>
+      <if test="coStatus != null">
+        co_status = #{coStatus,jdbcType=INTEGER},
+      </if>
+    </set>
+    where co_id = #{coId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pdsxy.mj.bean.Coach">
+    update coach
+    set co_name = #{coName,jdbcType=VARCHAR},
+      co_course = #{coCourse,jdbcType=VARCHAR},
+      co_status = #{coStatus,jdbcType=INTEGER}
+    where co_id = #{coId,jdbcType=INTEGER}
+  </update>
+</mapper>

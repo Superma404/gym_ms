@@ -1,0 +1,172 @@
+@charset "UTF-8";
+body{
+	margin:0;
+	padding:0;
+	text-align:center;
+	font-family: "Microsoft YaHei", "微软雅黑", "宋体";
+}
+#container{
+	width:1920px;
+	height:auto;
+}
+#header{
+	position:absolute; 
+	z-index:3; 
+	width:1920px;
+}
+header{
+	margin:0px;
+	padding:0px;
+	width:100%;
+	height:160px;
+	background:url(/NewsMS/images/ftop.jpg);
+	background-size:cover;	
+}
+nav{
+	width:100%;
+	float:left;
+	background:#4070BA;
+}
+#vir-head{
+	margin: 0 auto;
+	position:fixed; 
+	z-index:2; 
+	top:0px; 
+	width:1920px; 
+	background:#4070BA;
+}
+.menu{
+	margin: 0 auto;
+	text-align:left;
+	width:75%;
+	height:70px;
+}
+.menu ul{
+	float:left;
+	margin:20px 0px;
+	padding:0px;
+	text-align:center;
+}
+.menu .login{
+	float:right;
+	width:400px;
+	height:70px;
+	padding-right:50px;
+}
+a{
+	text-decoration: none;
+}
+.login p{
+	display:block;
+	text-decoration: none;
+	font-size: 20px;
+	font-weight: 70px;
+	text-align:right;
+}
+.menu li{
+	list-style-type:none; 
+	display:inline; 
+	float:left;	
+	margin:0px;
+	padding:0px;
+}
+.menu li a{
+	text-decoration:none;
+	color:white;
+	font-size: 20px;
+	margin:0px;
+	padding:20px 25px 22px 25px;
+}
+#main{
+	width:100%;
+	float:left;
+	height:auto;
+	margin-top:230px;
+}
+#main .main-box{
+	margin:0 auto;
+	position:relative;
+	width:75%;
+}
+.main-box .position{
+	float:left;
+	margin-top:30px;
+	width:100%;
+	height:60px;
+	background:#014899;
+	text-align:left;
+	color: #fff;
+	font-size:20px;
+	line-height:60px;
+}
+.position a{
+	text-decoration: none;
+	color:white;
+}
+.main-box .main-area{
+	float:left;
+	width:100%;
+}
+#main .main-left{
+	float:left;
+	width:65%;
+}
+.main-left h3,p{
+	text-align: left;
+}
+.news{
+	margin:0px;
+	padding:0px;
+}
+.news ul{
+	padding:0px;
+}
+.news ul li{
+	height:60px;
+	line-height:60px;
+	border-bottom: 1px solid #eee;
+	padding-left:25px;
+	list-style-type: none;
+	background: url(http://news.pdsu.edu.cn/images/xb.png) no-repeat left 28px;
+}
+.news ul li span{
+	float:right;
+	color: #999999;
+}
+.news ul li a{
+	float:left;
+	text-decoration:none;
+	font-size:17px;
+	text-align:left;
+	color: #000;
+	white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow:hidden;
+    display:block;
+    width:700px;
+}
+#main .main-right{
+	float:right;
+	width:30%;
+	height:auto;
+	background: red;
+}
+#footer{
+	float:left;
+	margin-top:20px;
+	width:100%;
+	background:#014899;
+}
+#footer .foot-box{
+	margin:0 auto;
+	width:75%;
+	height:130px;
+}
+.foot-box p{
+	padding:30px;
+	font-size:20px;
+	color:white;
+}
+.clear{
+	clear:both;
+}

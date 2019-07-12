@@ -1,0 +1,42 @@
+@charset "utf-8";
+/* CSS Document */
+
+#Two-mian{ width:100%; height:776px; background-color:#f8f8f8; overflow:hidden; padding-bottom:70px;}
+#Two-mian .mian{ width:1000px; height:61px; margin:0 auto; text-align:left;}
+#Two-mian .mian .title{ line-height:62px;}
+#Two-mian .mian .title a{ font-family:"微软雅黑"; font-size:14px; color:#3c3c48; font-weight:500;}
+.part1{ width:940px; height:713px; border:1px solid #e8e8e8; margin:0 auto; overflow:auto; padding:0 30px 0 30px; background:#fff;}
+.part1_t{ width:940px; height:146px; border-bottom:1px solid #ddd; position:relative;}
+.part1_t h1{ color:#403f3f; font-size:24px; padding-top:20px;}
+.part1_t .author{width:200px;height:60px;position:absolute;left:0px;bottom:0px;line-height:60px;text-align:left;}
+.author .time{ display:inline; font-size:12px; color:#AFC0EC; font-weight:bold;}
+.author .aut{ display:inline-block; padding-left:35px; font-size:12px; color:#000;}
+.author .name{display:inline-block;color:#0201ff; font-size:12px;}
+.part1_t .share{width:242px;height:49px;position:absolute;right:0px;bottom:0px;}
+.part1_m{ width:920px; height:174px;border-bottom:1px #ddd dashed; padding:20px 14px 0 6px; font-family:"华文宋体";font-size:14px; color:#4f514e; text-align:left; text-indent:2em;}
+
+.part1_b{ width:940px; height:370px; text-align:left; overflow:hidden;}
+.part1_b h1{ font-family:"微软雅黑"; font-size:24px; color:#3c3c48; padding:22px 0 30px 0;}
+.part1_b .Zheform{ width:580px; height:204px; margin-left:96px;}
+.Zheform .form{}
+.form .input{ width:586px; height:33px; margin:6px 0 6px 0;}
+.form .input h3{width:80px; height:32px; float:left; font-size:17px; color:#2c2c2c; text-align:center; line-height:32px;}
+.input .text{width:222px; height:32px;border:1px #ababab solid;float:left;}
+.input .textarea{ width:497px; height:120px;border:1px #ababab solid; overflow:hidden;resize:none;}
+.submit{display:block;width:129px; height:33px;background:#55acef; margin:12px 0 0 185px; text-align:center; line-height:33px;}
+.submit a{ display:block; font-size:14px;color:#FFF;}
+
+/* login页 */
+#filter{height:570px;background:url("../images/fbzc_02.jpg") no-repeat center}
+#login_box{ width:446px; height:288px;position:absolute; left:50%; top:50%; margin-left:-223px; margin-top:-144px;}
+#login_box .select{ width:407px; height:155px; border:2px #FFF solid; padding:13px 18px 0 18px;}
+.select .login-logo{ text-align:center;}
+.select .content{ font-family:"宋体"; font-size:12px; color:#000; line-height:18px;}
+.select .Zhe-select{ padding-top:24px; padding-left:90px;}
+.select .Zhe-select a{ display:block; width:102px; height:26px; background:url(../images/login-btn2.gif) no-repeat; float:left; margin:0 10px; color:#fff; font-size:12px; font-weight:bold; line-height:26px; text-align:center}
+.select .Zhe-select .active{ background:url(../images/login-btn1.jpg) no-repeat;}
+
+#login_box .pass-item{ height:45px; color:#2a2a2a; font-family:"宋体"; font-size:12px; text-align:center; line-height:40px;}
+.pass-item input{margin:0 5px;}
+#login_box .send{margin-left:55px;}
+

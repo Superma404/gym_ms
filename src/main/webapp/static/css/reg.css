@@ -1,0 +1,89 @@
+
+#reg{ width:100%; height:490px; border-bottom:4px #fff solid; background:#f8f8f8; padding:36px 0 48px 0;}
+#reg .reg-mian{ width:1000px; height:486px; border:1px #e3e3e3 solid; overflow:hidden; margin:0px auto; position:relative;}
+.reg-mian .reg_left{ width:555px; height:486px; position:absolute; padding:0px 67px 0px 28px; left:0px; top:0px;}
+.reg-mian .reg_left .title{ height:80px; border-bottom:1px #eee solid; line-height:90px;}
+.title h1{ float:left; font-size:24px; color:#12adff; padding-left:10px;}
+.title span{ float:right; font-size:14px; color:#8c8c8c; padding-right:5px;}
+.title span a{ font-size:14px;color:#0196db;}
+.regMassg{ position:relative;}
+.regMassg .regM_che{ height:22px; line-height:22px;}
+.regMassg .regM_che span{float:left; width:100px; font-size:12px;color:#000;margin-left: -50px;}
+.regM_che form{ float:left; height:22px; line-height:22px; font-size: 12px;
+}
+.regM_che span{margin:0 20px 0 0}
+.regM_che .radio{ height:22px; line-height:22px;}
+.regM_che .label{ height:22px; line-height:25px;}
+.regMassg .Zform{ width:426px; height:280px;}
+.regMassg .Zform .input{ height:39px; padding:13px 0px;}
+.input .name{ width:100px; float:left; text-align:center; line-height:38px; font-weight:normal;}
+.input .name span{ font-size:12px;color:#F00; vertical-align:super;}
+.input .text{ text-indent:10px; width:320px; height:38px; border:1px #d7d7d7 solid; color:#999791; line-height:38px;}
+.Zform .submit{  margin:22px 0 0 100px;}
+.Zform .submit a{ display:block;width:72px;text-align:center; height:40px; font-size:14px;color:#fff; background:#09f; line-height:38px;}
+.reg-mian .reg_right{ width:349px; height:486px;position:relative; left:650px; top:0px; border-left:1px #efefef solid; overflow:hidden;}
+
+/* cop */
+#cop{ width:100%; height:773px; background:#f8f8f8; overflow:hidden; padding:28px 0 46px 0;}
+.cop-mian{ width:960px; height:773px; margin:0 auto; background:#fff; padding:0 20px 0 20px; position:relative; text-align:left;}
+.cop_part1{ width:470px; height:350px; position:absolute; left:20px; top:0px; padding-top:10px;}
+.title{ height:61px;font-family:"宋体"; font-size:24px; color:#313a41; line-height:60px;}
+.Newlist{ height:290px;}
+/* li的宽度有问题 */
+.Newlist li{ width:427px; height:57px; border-bottom:1px solid #e5e4e2; line-height:57px; padding-left:21px; background:url(../images/cop_list1.gif) no-repeat left center;}
+.Newlist li a{ font-size:14px;color:#000;}
+.cop_part2{ width:470px; height:350px; position:absolute; left:490px; top:0px;padding-top:10px;}
+.cop_part3{ width:470px; height:350px; position:absolute; left:20px; top:360px;padding-top:10px;
+}
+.cop_part4{ width:470px; height:350px; position:absolute; left:490px; top:360px;padding-top:10px;}
+/*.third_main{width:200px;
+    height:200px;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;}*/
+.login-container{width:375px;margin:0 auto}
+.product{width: 1000px;height: auto;background: #ffffff;padding:36px 0 48px 0;margin:10px auto;}
+.product-left{width: auto;height: 50px;position: absolute}
+.product-right{width: auto;height: 50px;margin-left: 430px;position: absolute}
+.product-table{width: auto;height: 70px;background: #ffffff;left:50%;padding-top: 10px;padding-left: 240px}
+.product-form{width: 700px;height: auto;margin:10px auto;background: #ffffff;padding: 20px}
+.choose{width: 120px;height: auto;margin: auto}
+.my-h4{float: left}
+.btn-save{float: right}
+.title-td{width: 100px;height: 20px}
+.product-input .text{text-indent:10px; width:380px; height:35px; border:1px #d7d7d7 solid; color:#999791; line-height:38px;margin-bottom:5px }
+.product-select{text-indent:10px; width:auto; height:35px;margin:0 0 5px 20px;}
+.product-select1{width:200px; height:35px; position: absolute;margin-left: 110px}
+.product-select2{width:200px; height:35px;margin-left: 340px}
+.select1{width:150px; height:35px;}
+.select2{width:150px; height:35px;}
+.my-span{margin-right: 50px}
+.product-file{margin-bottom: 10px}
+.my-btn{
+    width: 60px;
+    height: auto;
+    display: inline-block;
+    margin-bottom: 0;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 3px 6px;
+    border-radius: 4px;
+    background: #2a8bcb;
+}
+.my-form .product-info-input{margin: 0 0 10px 50px;}
+.my-form .product-info-input .text{text-indent:10px; width:480px; height:35px; border:1px #d7d7d7 solid; color:#999791; line-height:38px;}
+.my-form .product-info-input textarea{text-indent:10px; width:480px; height:auto; border:1px #d7d7d7 solid; color:#999791; line-height:38px;}
+.product-info-text{margin: 5px 0 10px 50px;position: absolute}
+.product-info-select{margin-bottom: 10px}
+.product-info-select1{width:200px; height:35px; position: absolute;margin-left: 120px;}
+.product-info-select2{width:200px; height:35px;margin-left: 300px}
+.info-select1{width:150px; height:35px;}
+.info-select2{width:150px; height:35px;}
+.select-type{width:200px; height:35px; position: absolute;margin-left: 110px}
+.select-cla{width:380px; height:35px;}
+.text-area{margin-left: 70px}

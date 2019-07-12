@@ -1,0 +1,150 @@
+
+.p-detail_con{margin:0 auto;width: 1000px;margin-top:50px;
+    zoom: 1;}
+.p-detail_con .p-detail_contit{position: relative;height:70px}
+.p-detail_con .p-detail_contit h1{color: #333333;font-size:25px;}
+.p-detail_cfx{position: absolute;right:0px;top:0;font-size:12px;}
+.p-detail_cfx .p-detail_contit a{background:#009EFF; color:#fff;padding:5px 10px;display: inline-block;border-radius:5px}
+.p-detail_cfx .p-detail_contit2 a{background:#47C619;color:#fff;padding:5px 10px;display: inline-block;border-radius:5px}
+.p-detail_cfx .p-detail_contit i{background:url("../images/zcvprod-a_03.png") no-repeat;width:14px;height: 20px;display: inline-block;vertical-align:middle;margin-right: 3px;}
+.p-detail_cfx .p-detail_contit2 i{background:url("../images/zcvprod-a_05.png") no-repeat;width:18px;height: 20px;display: inline-block;vertical-align:middle;margin-right: 3px;}
+.p-detail_cfx2 {position: absolute;left:0px;bottom:0px}
+.p-detail_cfx2 li{color:#fff;font-size:12px;float:left;color:#adadad}
+.p-detail_cfx2 li span{margin-left:6px}
+.p-detail_cfx2 .p-detail_cfx2-1{background:#2395E3;padding:3px 5px;color:#fff;width:40px;}
+.p-detail_cfx2 .p-detail_cfx2-2{background:url("../images/zcvprod-a_10.png") no-repeat 5px 6px;padding:3px 0px 3px 25px;}
+
+.p-detail_cfx2 .p-detail_cfx2-3{background:url("../images/dt_03.png") no-repeat 5px 5px;padding:3px 0px 3px 25px;}
+.p-detail_cfx2 .p-detail_cfx2-4{background:url("../images/zcvprod-a_14.png") no-repeat 5px 5px;padding:3px 0px 3px 25px;}
+.p-detail-tab2{height:30px;margin-top:30px;border-bottom:1px solid #dddddd;}
+.p-detail-tab2 li{float:left;margin-right:20px;}
+.p-detail-tab2 li a{font-size:14px;display:inline-block;width:81px;height: 30px;text-align:center;border:1px solid #dddddd;border-bottom:none;background:#fff;line-height:30px;}
+.p-detail-tab2 li .p-detail-tab2-tb{border-top:2px solid #2395E3;color:#2395E3}
+.p-detail-tab2 li .p-detail-tab2-tb2{background:#E3E3E3;color:#000}
+
+  .p-detail_con2{overflow:auto;zoom: 1;margin:20px 0;}
+.p-detail_con2l{float:left;width:675px;overflow:auto;zoom: 1;}
+.p-detail_con2r{float: right;width:265px;margin-right:10px;}
+
+
+
+  .p-detail_txt1{overflow:auto;zoom: 1;}
+.p-detail_txt1 h3{color:#2A2A2A;margin:10px 0 }
+.p-detail_txt1 p{font-size:14px;text-indent:20px;color:#2A2A2A;margin-top:20px;line-height:25px;}
+.p-detail_txt1 div img{margin:20px 0;}
+
+  .detail-bott{border-top:1px dashed #dddddd;font-size:12px;padding: 20px;
+      zoom: 1;margin:20px 0}
+.detail-bott a{color:#4D87CD;margin-left:20px;}
+.detail-bott2 {margin-top:20px;position: relative}
+.detail-bott2 i{vertical-align:middle}
+.detail-bott2 span{position: absolute;right:10px;top:0;}
+.detail-bott2 span a{background:#4D87CD;border-radius:5px;padding:5px 12px;color: #fff}
+.textarea1{margin-top:20px;height:160px;display:none}
+.textarea1 .textarea2{ width:625px;padding:10px; height:120px;border:1px #ababab solid; overflow:hidden;resize:none;}
+.detail-bott .textarea2-tji{padding:3px 10px;cursor: pointer;margin-top:10px;background: #4D87CD;border:none;outline: none;color:#fff}
+
+
+  .p-detail_con2r{font-size:12px;z-index: 500}
+.p-detail_con2r1 .bot-con1zti{position: absolute;top: 10px;right: -5px;z-index: 1000}
+.p-detail_con2r1{position: relative;padding:10px;z-index: 500;border:1px solid #dddddd;}
+.p-detail_con2r1tit{font-weight:800;color:#464846}
+.p-detail_con2r1min{font-weight:700;color:#028df7;font-size:25px;margin:20px 0;}
+.p-detail_con2r1 p{width:245px;display: block;color:#464846;height:12px;}
+
+.p-detail_con2r1 p i{font-style: normal;float:right}
+.p-detail_con2r1 p span{float:left;}
+
+/*进度条样式begin*/
+.loading-container {
+
+    width:230px;
+    height:10px;
+    padding:50px;
+}
+.loading-container .loading-bar {
+    margin-bottom:40px;
+}
+.loading-bar {
+    background:#E5E5E5;
+    width:230px;
+    height:10px;
+    margin:15px 0;;
+
+}
+
+.amount {
+    /* we haven't included the colour yet, we'll get to that later. */
+    height:10px;
+    white-space:nowrap;
+    overflow:hidden;
+}
+
+.lines {
+    /* the lines overflow the container. This creates a continuous flow of the background */
+    width:400px;
+    /* We use a SVG file as the background */
+    background:url('../images/lines.svg') repeat-x;
+    background-size:10%;
+    height:120%;
+    text-align:center;
+    margin-top:-17px;
+    /* Any overflow is hidden */
+    overflow:hidden;
+    /* Implement the animations, we'll get to that later */
+    -webkit-animation:moveBars 3s linear infinite;
+    -moz-animation:moveBars 3s linear infinite;
+    -ms-animation:moveBars 3s linear infinite;
+    -o-animation:moveBars 3s linear infinite;
+    animation:moveBars 3s linear infinite;
+    font-weight:bold;
+    color:#fff;
+    font-size:18px;
+}
+
+.loaded {
+    text-align:center;
+    font-family:Helvetica, sans-serif;
+    font-weight:bold;
+    position:relative;
+    top:0px;
+    font-size:15px;
+    text-shadow:0px 0px 10px rgba(0,0,0,0.2);
+    color:#fff;
+    z-index:9999;
+}
+
+.loading-bar span{position: absolute;font-weight:100;color:#464846;right:5px;top:112px;font-size:10px}
+
+.blue {
+    background-color:#20b9c3;
+
+}
+/*进度条样式end*/
+.llloading-bar{border-bottom:1px dashed #EAEAEA;border-top:1px dashed #EAEAEA;margin-bottom: 10px;}
+.p-detail_con2r1 .loading-barcolo{color:#ff7247;font-size:10px;font-family: "宋体";margin:10px 0;text-align:center;border-top:1px solid #CCCCCC;padding-top:10px;}
+.bot-con1zti .bot-con1ztizz{position: absolute;top:0px;left:0px;z-index:5000}
+.loading-bzcz{overflow: auto;
+    zoom: 1;}
+.loading-bzcz span{font-size:18px;color: #0497FF;position: absolute;left:10px;}
+.loading-bzcz i{font-style:normal;position: absolute;right:10px;color:#464846}
+.loading-bzcz b{color:#DC4F34;font-size:16px;}
+.loading-bzcz{border:1px solid #dddddd;margin-top:20px;padding:10px;}
+.loading-bzcz2{background:#FFF9E9}
+.loading-bzcz2 p{line-height:25px}
+.loading-bzcz p{color:#5b5959;margin: 10px 0;}
+.loading-bzcz a{background:#019AFF;color:#fff;padding:5px 10px;font-size:18px;display: inline-block;margin-top:10px;border-radius:5px;}
+.loading-bzcz .l{color:#999999;margin:5px 0}
+
+.loading-bzcz-1{position:relative;height:35px;border-bottom: 1px dashed #dddddd;}
+.loading-bzcz-2{position:relative;height:35px;line-height:35px;color:#464846;border-bottom: 1px dashed #dddddd;}
+
+
+  .detali-fqrxx{position: relative;min-height:100px;}
+.detali-fqrxx_header{position: absolute;top:10px;left:0px;}
+.detali-fqrxx_text{position: absolute;top:10px;right:0px;}
+.detali-fqrxx_text p{margin:5px 0}
+.detali-fqrxx_text .h{height:20px;}
+.detali-fqrxx_text h2{display: inline-block;position: absolute;top: 55px;right: 10px;}
+.detali-fqrxx_text i{position: absolute;left:0px;}
+.detali-fqrxx_text s{position: absolute;left:20px;font-style:normal;display: inline-block;text-decoration: none}

@@ -1,0 +1,14 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{margin:0px;padding:0px;font-size:12px;font-family: "微软雅黑", Arial; text-align:center;color:#000;}
+div,p,h1,h2,h3,h4,h5,h6,ul,li,ol,dl,dt,dd,img,form{margin:0;padding:0;border:0;}
+ul,ol,li{list-style:none;}
+img{border:0; vertical-align:top;}
+a{text-decoration:none; cursor:pointer;}
+a:hover{text-decoration:underline;}
+table,td,tr,th,input,select{font-size:13px;}
+input{font-family:Arial;} /*text and password width*/
+table,td{ border-collapse:collapse;}
+.clear{ zoom:1;}
+.clear:after{ display:block;clear:both;height:0;content:''}

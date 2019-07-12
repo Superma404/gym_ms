@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pdsxy.mj.dao.CourseMapper">
+  <resultMap id="BaseResultMap" type="com.pdsxy.mj.bean.Course">
+    <id column="cou_id" jdbcType="INTEGER" property="couId" />
+    <result column="cou_name" jdbcType="VARCHAR" property="couName" />
+    <result column="cou_content" jdbcType="VARCHAR" property="couContent" />
+    <result column="cou_img" jdbcType="VARCHAR" property="couImg" />
+    <result column="cou_coach" jdbcType="VARCHAR" property="couCoach" />
+    <result column="cou_begintime" jdbcType="DATE" property="couBegintime" />
+    <result column="cou_endtime" jdbcType="DATE" property="couEndtime" />
+    <result column="cou_adress" jdbcType="VARCHAR" property="couAdress" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    cou_id, cou_name, cou_content, cou_img, cou_coach, cou_begintime, cou_endtime, cou_adress
+  </sql>
+  <select id="selectByExample" parameterType="com.pdsxy.mj.bean.CourseExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from course
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from course
+    where cou_id = #{couId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from course
+    where cou_id = #{couId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.pdsxy.mj.bean.CourseExample">
+    delete from course
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <delete id="deleteByMorecouId" parameterType="com.pdsxy.mj.bean.CourseExample">
+    delete from course
+    where cou_id in
+    <foreach collection="array" item="id" open="(" close=")" separator=",">
+      #{id}
+    </foreach>
+  </delete>
+  <insert id="insert" parameterType="com.pdsxy.mj.bean.Course">
+    insert into course (cou_id, cou_name, cou_content, 
+      cou_img, cou_coach, cou_begintime, 
+      cou_endtime, cou_adress)
+    values (#{couId,jdbcType=INTEGER}, #{couName,jdbcType=VARCHAR}, #{couContent,jdbcType=VARCHAR}, 
+      #{couImg,jdbcType=VARCHAR}, #{couCoach,jdbcType=VARCHAR}, #{couBegintime,jdbcType=DATE}, 
+      #{couEndtime,jdbcType=DATE}, #{couAdress,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.pdsxy.mj.bean.Course">
+    insert into course
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="couId != null">
+        cou_id,
+      </if>
+      <if test="couName != null">
+        cou_name,
+      </if>
+      <if test="couContent != null">
+        cou_content,
+      </if>
+      <if test="couImg != null">
+        cou_img,
+      </if>
+      <if test="couCoach != null">
+        cou_coach,
+      </if>
+      <if test="couBegintime != null">
+        cou_begintime,
+      </if>
+      <if test="couEndtime != null">
+        cou_endtime,
+      </if>
+      <if test="couAdress != null">
+        cou_adress,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="couId != null">
+        #{couId,jdbcType=INTEGER},
+      </if>
+      <if test="couName != null">
+        #{couName,jdbcType=VARCHAR},
+      </if>
+      <if test="couContent != null">
+        #{couContent,jdbcType=VARCHAR},
+      </if>
+      <if test="couImg != null">
+        #{couImg,jdbcType=VARCHAR},
+      </if>
+      <if test="couCoach != null">
+        #{couCoach,jdbcType=VARCHAR},
+      </if>
+      <if test="couBegintime != null">
+        #{couBegintime,jdbcType=DATE},
+      </if>
+      <if test="couEndtime != null">
+        #{couEndtime,jdbcType=DATE},
+      </if>
+      <if test="couAdress != null">
+        #{couAdress,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.pdsxy.mj.bean.CourseExample" resultType="java.lang.Long">
+    select count(*) from course
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update course
+    <set>
+      <if test="record.couId != null">
+        cou_id = #{record.couId,jdbcType=INTEGER},
+      </if>
+      <if test="record.couName != null">
+        cou_name = #{record.couName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.couContent != null">
+        cou_content = #{record.couContent,jdbcType=VARCHAR},
+      </if>
+      <if test="record.couImg != null">
+        cou_img = #{record.couImg,jdbcType=VARCHAR},
+      </if>
+      <if test="record.couCoach != null">
+        cou_coach = #{record.couCoach,jdbcType=VARCHAR},
+      </if>
+      <if test="record.couBegintime != null">
+        cou_begintime = #{record.couBegintime,jdbcType=DATE},
+      </if>
+      <if test="record.couEndtime != null">
+        cou_endtime = #{record.couEndtime,jdbcType=DATE},
+      </if>
+      <if test="record.couAdress != null">
+        cou_adress = #{record.couAdress,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update course
+    set cou_id = #{record.couId,jdbcType=INTEGER},
+      cou_name = #{record.couName,jdbcType=VARCHAR},
+      cou_content = #{record.couContent,jdbcType=VARCHAR},
+      cou_img = #{record.couImg,jdbcType=VARCHAR},
+      cou_coach = #{record.couCoach,jdbcType=VARCHAR},
+      cou_begintime = #{record.couBegintime,jdbcType=DATE},
+      cou_endtime = #{record.couEndtime,jdbcType=DATE},
+      cou_adress = #{record.couAdress,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pdsxy.mj.bean.Course">
+    update course
+    <set>
+      <if test="couName != null">
+        cou_name = #{couName,jdbcType=VARCHAR},
+      </if>
+      <if test="couContent != null">
+        cou_content = #{couContent,jdbcType=VARCHAR},
+      </if>
+      <if test="couImg != null">
+        cou_img = #{couImg,jdbcType=VARCHAR},
+      </if>
+      <if test="couCoach != null">
+        cou_coach = #{couCoach,jdbcType=VARCHAR},
+      </if>
+      <if test="couBegintime != null">
+        cou_begintime = #{couBegintime,jdbcType=DATE},
+      </if>
+      <if test="couEndtime != null">
+        cou_endtime = #{couEndtime,jdbcType=DATE},
+      </if>
+      <if test="couAdress != null">
+        cou_adress = #{couAdress,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where cou_id = #{couId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pdsxy.mj.bean.Course">
+    update course
+    set cou_name = #{couName,jdbcType=VARCHAR},
+      cou_content = #{couContent,jdbcType=VARCHAR},
+      cou_img = #{couImg,jdbcType=VARCHAR},
+      cou_coach = #{couCoach,jdbcType=VARCHAR},
+      cou_begintime = #{couBegintime,jdbcType=DATE},
+      cou_endtime = #{couEndtime,jdbcType=DATE},
+      cou_adress = #{couAdress,jdbcType=VARCHAR}
+    where cou_id = #{couId,jdbcType=INTEGER}
+  </update>
+</mapper>

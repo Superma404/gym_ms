@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pdsxy.mj.dao.MessageMapper">
+  <resultMap id="BaseResultMap" type="com.pdsxy.mj.bean.Message">
+    <id column="me_id" jdbcType="INTEGER" property="meId" />
+    <result column="me_author" jdbcType="VARCHAR" property="meAuthor" />
+    <result column="me_content" jdbcType="VARCHAR" property="meContent" />
+    <result column="me_img" jdbcType="VARCHAR" property="meImg" />
+    <result column="me_time" jdbcType="DATE" property="meTime" />
+    <result column="me_status" jdbcType="INTEGER" property="meStatus" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    me_id, me_author, me_content, me_img, me_time, me_status
+  </sql>
+  <select id="selectByExample" parameterType="com.pdsxy.mj.bean.MessageExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from message
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from message
+    where me_id = #{meId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from message
+    where me_id = #{meId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.pdsxy.mj.bean.MessageExample">
+    delete from message
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.pdsxy.mj.bean.Message">
+    insert into message (me_id, me_author, me_content, 
+      me_img, me_time, me_status
+      )
+    values (#{meId,jdbcType=INTEGER}, #{meAuthor,jdbcType=VARCHAR}, #{meContent,jdbcType=VARCHAR}, 
+      #{meImg,jdbcType=VARCHAR}, #{meTime,jdbcType=DATE}, #{meStatus,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.pdsxy.mj.bean.Message">
+    insert into message
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="meId != null">
+        me_id,
+      </if>
+      <if test="meAuthor != null">
+        me_author,
+      </if>
+      <if test="meContent != null">
+        me_content,
+      </if>
+      <if test="meImg != null">
+        me_img,
+      </if>
+      <if test="meTime != null">
+        me_time,
+      </if>
+      <if test="meStatus != null">
+        me_status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="meId != null">
+        #{meId,jdbcType=INTEGER},
+      </if>
+      <if test="meAuthor != null">
+        #{meAuthor,jdbcType=VARCHAR},
+      </if>
+      <if test="meContent != null">
+        #{meContent,jdbcType=VARCHAR},
+      </if>
+      <if test="meImg != null">
+        #{meImg,jdbcType=VARCHAR},
+      </if>
+      <if test="meTime != null">
+        #{meTime,jdbcType=DATE},
+      </if>
+      <if test="meStatus != null">
+        #{meStatus,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.pdsxy.mj.bean.MessageExample" resultType="java.lang.Long">
+    select count(*) from message
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update message
+    <set>
+      <if test="record.meId != null">
+        me_id = #{record.meId,jdbcType=INTEGER},
+      </if>
+      <if test="record.meAuthor != null">
+        me_author = #{record.meAuthor,jdbcType=VARCHAR},
+      </if>
+      <if test="record.meContent != null">
+        me_content = #{record.meContent,jdbcType=VARCHAR},
+      </if>
+      <if test="record.meImg != null">
+        me_img = #{record.meImg,jdbcType=VARCHAR},
+      </if>
+      <if test="record.meTime != null">
+        me_time = #{record.meTime,jdbcType=DATE},
+      </if>
+      <if test="record.meStatus != null">
+        me_status = #{record.meStatus,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update message
+    set me_id = #{record.meId,jdbcType=INTEGER},
+      me_author = #{record.meAuthor,jdbcType=VARCHAR},
+      me_content = #{record.meContent,jdbcType=VARCHAR},
+      me_img = #{record.meImg,jdbcType=VARCHAR},
+      me_time = #{record.meTime,jdbcType=DATE},
+      me_status = #{record.meStatus,jdbcType=INTEGER}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pdsxy.mj.bean.Message">
+    update message
+    <set>
+      <if test="meAuthor != null">
+        me_author = #{meAuthor,jdbcType=VARCHAR},
+      </if>
+      <if test="meContent != null">
+        me_content = #{meContent,jdbcType=VARCHAR},
+      </if>
+      <if test="meImg != null">
+        me_img = #{meImg,jdbcType=VARCHAR},
+      </if>
+      <if test="meTime != null">
+        me_time = #{meTime,jdbcType=DATE},
+      </if>
+      <if test="meStatus != null">
+        me_status = #{meStatus,jdbcType=INTEGER},
+      </if>
+    </set>
+    where me_id = #{meId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pdsxy.mj.bean.Message">
+    update message
+    set me_author = #{meAuthor,jdbcType=VARCHAR},
+      me_content = #{meContent,jdbcType=VARCHAR},
+      me_img = #{meImg,jdbcType=VARCHAR},
+      me_time = #{meTime,jdbcType=DATE},
+      me_status = #{meStatus,jdbcType=INTEGER}
+    where me_id = #{meId,jdbcType=INTEGER}
+  </update>
+</mapper>
